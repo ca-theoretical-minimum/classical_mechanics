@@ -1,14 +1,10 @@
 import functools
-from numbers import Number
-from typing import Callable, Iterable, Union, Tuple
+from typing import Callable, Iterable, Tuple, Union
 
 import numpy as np
-import sympy
-from matplotlib import pyplot as plt, animation
+from matplotlib import animation, pyplot as plt
 from matplotlib.animation import FuncAnimation
-from numpy import sin, cos
 from scipy.integrate import odeint
-
 
 mpl_lim = Union[float, Tuple[float, float]]
 
@@ -67,8 +63,6 @@ def plot_ode(
 
         ln.set_data(vals[:1], vals[1:])
         return ln,
-
-    import ipdb; ipdb.set_trace()
 
     frames = np.stack([x, y], axis=-1)
 
